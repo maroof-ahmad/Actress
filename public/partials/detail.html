@@ -1,0 +1,26 @@
+<!-- View the details of a superhero -->
+<div class="col-md-8 col-md-offset-2">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h2 class="panel-title text-center"><span class="glyphicon glyphicon-user"></span> Actress details </h2>
+        </div>
+        <div class="panel-body text-center">
+            <img ng-src="{{actress.picture.url}}" />
+            <h2>{{actress.name}}</h2>
+            <hr />
+            <p class="text-left"><label>Rating: </label> {{actress.rating}}</p>
+            <p class="text-left"><label>Qualities: </label> {{actress.qualities}}</p>
+            <!-- Only if there are other pictures -->
+            <div ng-if="actress.morePictures">
+                <h3> More Pictures <h3>
+                <div ng-repeat="picture in actress.morePictures">
+                    <div class="col-md-{{12 / actress.morePictures.length}}">
+                        <a ng-href="{{picture.url}}" class="thumbnail">
+                          <img ng-src="{{picture.url}}" width="400px" height="400px">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
